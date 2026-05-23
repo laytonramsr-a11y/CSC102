@@ -9,23 +9,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don't Touch the Light Switch!</title>
     <script src="code.js"></script>
-  
-  <script>
+
+    <script>
+        // Safety messages
+        if (true) {
+            console.log("The electrician is safe to work.");
+            // avoid document.write during page load after content; write to console instead
+            alert("Is the breaker off? If not, turn it off before working on the light switch.");
+            alert("Is the electrician wearing insulated gloves? If not, put on insulated gloves before working on the light switch.");
+            alert("Is the electrician using insulated tools? If not, use insulated tools before working on the light switch.");
+        }
+
         var isElectriciansafe = true;
-            if (true) {
-                console.log("The electrician is safe to work."); 
-                document.write("The electrician is safe to work.");
-                alert("Is the breaker off? If not, turn it off before working on the light switch.");
-                alert("Is the electrician wearing insulated gloves? If not, put on insulated gloves before working on the light switch.");
-                alert("Is the electrician using insulated tools? If not, use insulated tools before working on the light switch.");
-            } 
-            if (false) {
-                console.log("The electrician is not safe to work.");
-                document.write("The electrician is not safe to work.");
-                alert("Do not work on the light switch until all safety precautions are met.");
+
+        // Proper function declaration
+        function calculateSumOutput(die1, die2) {
+            var sum = die1 + die2;
+            if (sum == 7 || sum == 11) {
+                console.log("You Win!");
+            } else if (die1 == die2 && die1 % 2 == 0) {
+                console.log("Doubles! You get to roll again.");
+            } else if (sum == 2 || sum == 3 || sum == 12) {
+                console.log("You Lose!");
+            } else {
+                console.log("No immediate result: sum = " + sum);
             }
+            // return the sum for further use
+            return sum;
+        }
+
+        // Example usage: roll two dice and output result
+        (function playExample() {
+            var die1 = Math.floor(Math.random() * 6) + 1;
+            var die2 = Math.floor(Math.random() * 6) + 1;
+            var output = calculateSumOutput(die1, die2);
+            console.log('Rolled:', die1, die2, 'Sum:', output);
+        })();
     </script>
-    
+
     <link href="main.css" rel="stylesheet">
 </head>
 
