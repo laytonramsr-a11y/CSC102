@@ -12,18 +12,18 @@
   
   <script>
         var isElectriciansafe = true;
-            if (isElectriciansafe) {
-                console.log("The electrician is safe to work.");
-            } else {
+            if (true) {
+                console.log("The electrician is safe to work."); 
+                document.write("The electrician is safe to work.");
+                alert("Is the breaker off? If not, turn it off before working on the light switch.");
+                alert("Is the electrician wearing insulated gloves? If not, put on insulated gloves before working on the light switch.");
+                alert("Is the electrician using insulated tools? If not, use insulated tools before working on the light switch.");
+            } 
+            if (false) {
                 console.log("The electrician is not safe to work.");
+                document.write("The electrician is not safe to work.");
+                alert("Do not work on the light switch until all safety precautions are met.");
             }
-            isElectricianunsafe = false;
-            if (isElectricianunsafe) {
-                console.log("The electrician is not safe to work.");
-            } else {
-                console.log("The electrician is safe to work.");
-            }
-        
     </script>
     
     <link href="main.css" rel="stylesheet">
@@ -34,6 +34,10 @@
     <header>
         <h1 id="heading">Welcome to the Game!</h1>
         <button onclick="updateText();">Change Text</button>
+        <br>
+
+        <h2 id="subheading">Get Ready to Play!</h2>
+        <button onclick="updateText2(' Let the fun begin!');">Change Subheading</button>
     </header>
 
 </body>
