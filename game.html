@@ -1,65 +1,33 @@
-<!--Layton Ramsey,05/23/2026 -->
+<!--Layton Ramsey,05/26/2026 -->
 
 <!DOCTYPE html>
 
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don't Touch the Light Switch!</title>
-    <script src="code.js"></script>
-
-    <script>
-        // Safety messages
-        if (true) {
-            console.log("The electrician is safe to work.");
-            document.write("The electrician is safe to work.<br>");
-            alert("Is the breaker off? If not, turn it off before working on the light switch.");
-            alert("Is the electrician wearing insulated gloves? If not, put on insulated gloves before working on the light switch.");
-            alert("Is the electrician using insulated tools? If not, use insulated tools before working on the light switch.");
-        }
-
-        var isElectriciansafe = true;
-
-        // Proper function declaration
-        function calculateSumOutput(die1, die2) {
-            var sum = die1 + die2;
-            if (sum == 7 || sum == 11) {
-                console.log("You Win!");
-            } else if (die1 == die2 && die1 % 2 == 0) {
-                console.log("Doubles! You get to roll again.");
-            } else if (sum == 2 || sum == 3 || sum == 12) {
-                console.log("You Lose!");
-            } else {
-                console.log("No immediate result: sum = " + sum);
-            }
-            // return the sum for further use
-            return sum;
-        }
-
-        // Example usage: roll two dice and output result
-        (function playExample() {
-            var die1 = Math.floor(Math.random() * 6) + 1;
-            var die2 = Math.floor(Math.random() * 6) + 1;
-            var output = calculateSumOutput(die1, die2);
-            console.log('Rolled:', die1, die2, 'Sum:', output);
-        })();
-    </script>
-
-    <link href="main.css" rel="stylesheet">
-</head>
-
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <title>Don't Touch the Light Switch!</title>
+        <script src="code.js"></script>
+    </head>
+    <body>
 
     <header>
-        <h1 id="heading">Welcome to the Game!</h1>
-        <button onclick="updateText();">Change Text</button>
-        <br>
-
-        <h2 id="subheading">Get Ready to Play!</h2>
-        <button onclick="updateText2(' Let the fun begin!');">Change Subheading</button>
+        <h1>Welcome to the Game!</h1>
+        <h2>
+             
+            <nav>
+                <a href="./index.html">Home</a><br>
+                <a href="./boards.html">Boards</a><br>
+                <a href="./game.html">Game</a><br>
+            </nav>
+        </h2>
     </header>
+    
+    <h2>Craps Simulation</h2>
+    <button onclick="playCraps()">Play Craps</button>
+    <h3 id="crapsResult">Results of Craps</h3>
 
 </body>
 
