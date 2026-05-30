@@ -34,3 +34,19 @@ footer{
 h1{
     text-align: center;
 }
+
+form{
+    margin-right: 200px;
+    text-align: center;
+    text-decoration-color: black;
+    text-decoration-thickness: 5px;
+    color: black;
+}
+
+
+
+h3{
+    text-align: center;
+    margin-right: 200px;
+    color: black;
+}

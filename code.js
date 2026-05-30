@@ -25,32 +25,33 @@
 
 	function validateForm()
         {
-            var fname = Math.floor(Math.length() = 9) + 1;
+            var fname;
+                
+            var lname;
+                
+            var sum = fname + " " + lname;
 
-            var lname = Math.floor(Math.length() = 9) + 1; 
+            var areacode;
+                theareacode = 5;
 
-            var fullname = fname + " " + lname;
-
-            var areacode = document.getElementById("areacode").value;
-
-            if (fullname.length > 20)
+            if (sum > 20)
             {    
-             document.getElementById("warning").innerHTML = "Invalid";
+             document.getElementById("warning").innerHTML = "Invalid"+ sum.length;
             }
-            else if (fullname.length == 20)
+            else if (sum == 20)
             {
-                document.getElementById("warning").innerHTML = "Valid";
+                document.getElementById("warning").innerHTML = "Valid" + sum.length;
             }
 
           areacode = document.getElementById("areacode").value;
 
-            if (areacode.length > 5)
+            if (areacode > 5)
             {
-                document.getElementById("warning").innerHTML = "!Invalid";
+                document.getElementById("warning").innerHTML = "!Invalid" + areacode.length;
             }
-            else if (areacode.length == 5)
+            else if (areacode == 5)
             {
-                document.getElementById("warning").innerHTML = "Valid";
+                document.getElementById("warning").innerHTML = "Valid" + areacode.length;
             }
         }
 
