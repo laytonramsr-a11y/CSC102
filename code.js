@@ -19,18 +19,35 @@ function playCraps() {
     document.getElementById("crapsResult").innerHTML = result;
 }
 
-function validateInput(event) {
-    console.log("Validating input...");
-	return false;
+function myForm() { 
 
-	window.addEventListener("DOMContentLoaded", (event) => {
-    	const form = document.getElementById("myForm");
-   		 if (form) {
-        	form.addEventListener("submit", validateInput);
-    }
-	});
+    var fname;
+	var lname;
+	var areaCode;
+	var sum= fname + "" + lname;
 
-    
+	
+            if (sum > 20)
+            {    
+             document.getElementById("warning").innerHTML = "Invalid"+ sum.length;
+            }
+            else if (sum <= 20)
+            {
+                document.getElementById("warning").innerHTML = "Valid" + sum.length;
+            }
+
+          areacode = document.getElementById("areacode").value;
+
+            if (areacode > 5)
+            {
+                document.getElementById("warning").innerHTML = "!Invalid" + areacode.length;
+            }
+            else if (areacode == 5)
+            {
+                document.getElementById("warning").innerHTML = "Valid" + areacode.length;
+            }
+        
+
 }
 
 	
