@@ -19,35 +19,27 @@ function playCraps() {
     document.getElementById("crapsResult").innerHTML = result;
 }
 
-function myForm() { 
+function validateInput(event) {
+    event.preventDefault();
+    let firstName = document.getElementById("firstName").value;
+    console.log(firstName);
+    let lastName = document.getElementById("lastName").value;
+    console.log(lastName);
+    let areaCode = document.getElementById("areaCode").value;
+    console.log(areaCode);
+    // Concatenate first and last name variables
+    let fullName = firstName + " " + lastName;
+    console.log(fullName);
+    // Check if fullName has fewer than 20 characters. Exit if that is the case.
+    if (fullName.length < 20) {
+        alert("Full name must be at least 20 characters long.");
+        return false;
+    }
+    // Check if areaCode has 5 characters and is a number.
 
-    var fname;
-	var lname;
-	var areaCode;
-	var sum= fname + "" + lname;
-
-	
-            if (sum > 20)
-            {    
-             document.getElementById("warning").innerHTML = "Invalid"+ sum.length;
-            }
-            else if (sum <= 20)
-            {
-                document.getElementById("warning").innerHTML = "Valid" + sum.length;
-            }
-
-          areacode = document.getElementById("areacode").value;
-
-            if (areacode > 5)
-            {
-                document.getElementById("warning").innerHTML = "!Invalid" + areacode.length;
-            }
-            else if (areacode == 5)
-            {
-                document.getElementById("warning").innerHTML = "Valid" + areacode.length;
-            }
-        
-
+    if (areaCode.length != 5  || (!Number.isInteger(parseInt(areaCode)) && parseInt(areaCode) > 9999)) {
+        alert(" Invalid area code. Area code must be a 5-digit number.");
+        return false;
+    } 
+    console.log("Validated");
 }
-
-	
