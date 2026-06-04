@@ -19,6 +19,20 @@ function playCraps() {
     document.getElementById("crapsResult").innerHTML = result;
 }
 
+function validateInput(event) 
+{
+    event.preventDefault();
+    console.log("Validating input...");
+    return false;
+}
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    const form = document.getElementById("myForm");
+    form.addEventListener("submit", validateInput);
+});
+
+
+
 function validateInput(event)
  {
     event.preventDefault();
