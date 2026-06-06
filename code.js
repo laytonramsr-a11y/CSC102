@@ -19,20 +19,6 @@ function playCraps() {
     document.getElementById("crapsResult").innerHTML = result;
 }
 
-function validateInput(event) 
-{
-    event.preventDefault();
-    console.log("Validating input...");
-    return false;
-}
-
-window.addEventListener("DOMContentLoaded", (event) => {
-    const form = document.getElementById("myForm");
-    form.addEventListener("submit", validateInput);
-});
-
-
-
 function validateInput(event)
  {
     event.preventDefault();
@@ -67,4 +53,51 @@ function validateInput(event)
         return false;
     } 
     console.log("Validated");
+}
+
+let element;
+let start;
+let stop;
+
+window.addEventListener("DOMContentLoaded", (event) => {
+
+    element = document.getElementById("memeImage");
+    
+    const form = document.getElementById("myform");
+    const startButton = document.getElementById("startButton");
+    const stopButton = document.getElementById("stopButton");
+    if (form) {
+        form.addEventListener("submit", validateInput);
+    }   
+});
+
+function step(timestamp) {
+    if (stop) {
+        return;
+    }
+    if (start === undefined) {
+        start = timestamp;
+    }
+    const elapsed = timestamp - start;
+        // Math.min() is used here to make sure that the element stops at 200px
+        element.style.transform = `translateX(${Math.min(0.1 * elapsed, 200)}px)`;
+        if (elapsed >= 1000) {
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            return;
+        }
+        requestAnimationFrame(step);
+    }
+function animateImage() {
+    document.getElementById("startButton").disabled = true;
+    document.getElementById("stopButton").disabled = false;
+    start = undefined;
+    requestAnimationFrame(step);
+}
+
+function stopAnimation() {
+    stop = true;
+    document.getElementById("startButton").disabled = false;
+    document.getElementById("stopButton").disabled = true;
+    element.style.transform = "translateX(0px)";
 }
