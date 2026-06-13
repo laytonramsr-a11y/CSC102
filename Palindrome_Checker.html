@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Form Validation</title>
+        <title>Palindrome Checker</title>
         <link rel="stylesheet" href="main.css">
         <script src="code.js"></script>
     </head>
@@ -17,7 +17,7 @@
     <!--Link to the other pages-->
     
         <header>
-            <h1>Welcome to CSC102!</h1>
+            <h1>Welcome to the Palindrome Checker!</h1>
             <h2>
                 <nav>
                     <a href="./index.html">Home</a><br>
@@ -30,19 +30,14 @@
          
         </header>
 
-        <!--Form for user input validation for first name, last name, and area code-->
+    <!--for users to check if their choice of word is a palindrome-->    
+        <p>
+            <label for="inputString">Enter a word to check if it's a palindrome:</label><br>
+            <input type="text" id="inputString" name="inputString"><br><br>
+            <button onclick="checkPalindrome()">Check Palindrome</button><br><br>
+            <h3 id="palindromeResult"></h3>
+        </p>
 
-        <form id="myForm">
-            <label for="fName">First Name:</label>
-            <input type="text" id="fName" name="First Name"><br><br>
-            <label for="lName">Last Name:</label>
-            <input type="text" id="lName" name="Last Name"><br><br>
-            <label for="areaCode">Area Code:</label>
-            <input type="text" id="areaCode" name="Area Code"><br><br>
-            <input type="submit" value="Submit"><br><br>
-
-        </form>
-      
         <footer>
             Layton Ramsey<br>
             University of Advancing Technology<br>
@@ -51,8 +46,6 @@
         </footer>
         <br>
         <br>
-        <p>
-            <img id="memeImage" src="astrocat.jpg" alt="astrocat">
-        </p>
         
-</html>
+       
+

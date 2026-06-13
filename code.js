@@ -59,7 +59,9 @@ let element;
 let start;
 let stop;
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", (event) =>{
+});
+
 
     element = document.getElementById("memeImage");
     
@@ -68,8 +70,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const stopButton = document.getElementById("stopButton");
     if (form) {
         form.addEventListener("submit", validateInput);
-    }   
-});
+    }  
 
 function step(timestamp) {
     if (stop) {
@@ -101,3 +102,26 @@ function stopAnimation() {
     document.getElementById("stopButton").disabled = true;
     element.style.transform = "translateX(0px)";
 }
+
+function checkPalindrome() {
+    // Get the input string from the user
+    const inputString = document.getElementById("inputString").value;
+    // Get the result element to display the output
+    const resultElement = document.getElementById("palindromeResult");
+    // Remove non-alphanumeric characters and convert to lowercase for palindrome checking
+    const cleanedString = inputString.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+    // Check if the cleaned string is the same as its reverse
+    const reversedString = cleanedString.split('').reverse().join('');
+    const isPalindrome = cleanedString === reversedString;
+
+    // Display the result
+    if (isPalindrome) {
+        resultElement.innerText = `"${inputString}" is a palindrome!`;
+        resultElement.style.color = "green";
+    } else {
+        resultElement.innerText = `"${inputString}" is not a palindrome.`;
+        resultElement.style.color = "red";
+    }
+}
+
+  
