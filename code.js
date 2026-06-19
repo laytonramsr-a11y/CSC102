@@ -57,31 +57,31 @@ function validateInput(event)
 
 let element;
 let start;
-let stop;
+let stop = false;
+let startButton;
+let stopButton;
 
-window.addEventListener("DOMContentLoaded", (event) =>{
-});
-
-
-    element = document.getElementById("memeImage");
-    
-    const form = document.getElementById("myform");
-    const startButton = document.getElementById("startButton");
-    const stopButton = document.getElementById("stopButton");
-    if (form) {
+window.addEventListener("DOMContentLoaded", event => {
+       element = document.getElementById("memeImage");
+       const form = document.getElementById("myform");
+       startButton = document.getElementById("startButton");
+       stopButton = document.getElementById("stopButton");
+       if (form) {
         form.addEventListener("submit", validateInput);
-    }  
+       }
+  });
 
 function step(timestamp) {
     if (stop) {
         return;
     }
+
     if (start === undefined) {
         start = timestamp;
     }
     const elapsed = timestamp - start;
-        // Math.min() is used here to make sure that the element stops at 200px
-        element.style.transform = `translateX(${Math.min(0.1 * elapsed, 200)}px)`;
+        // Math.min() is used here to make sure that the element stops at 1000px
+        element.style.transform = `translateX(${Math.min(0.1 * elapsed, 1000)}px)`;
         if (elapsed >= 1000) {
             startButton.disabled = false;
             stopButton.disabled = true;
@@ -93,6 +93,7 @@ function animateImage() {
     document.getElementById("startButton").disabled = true;
     document.getElementById("stopButton").disabled = false;
     start = undefined;
+    stop = false;
     requestAnimationFrame(step);
 }
 
@@ -124,4 +125,17 @@ function checkPalindrome() {
     }
 }
 
-  
+    var myAudio = new Audio('I Am A Robot-SoundBible.com-1105154683.mp3');
+
+    function playAudio() {  
+        alert("Playing Audio");
+
+        // myAudio.play();
+        
+        var myAudioElement = document.getElementById("myAudio");
+        myAudio.play();
+
+        // console.log(myAudioElement);
+        
+
+}
