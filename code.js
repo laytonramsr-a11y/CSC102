@@ -113,6 +113,7 @@ function checkPalindrome() {
     const cleanedString = inputString.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
     // Check if the cleaned string is the same as its reverse
     const reversedString = cleanedString.split('').reverse().join('');
+    // Determine if it's a palindrome
     const isPalindrome = cleanedString === reversedString;
 
     // Display the result
@@ -136,6 +137,42 @@ function checkPalindrome() {
         myAudio.play();
 
         // console.log(myAudioElement);
-        
+
 
 }
+
+function WhichMikeHitMyCar() {
+    var listOfMikes = ["Mike", "Mikey", "Michael", "Mikey Mike"];
+
+    // console.log(listOfMikes);
+
+    var randomIndex = Math.floor(Math.random() * listOfMikes.length);
+
+    // console.log(randomIndex);
+
+    console.log("The Mike that hit your car is: " + listOfMikes[randomIndex]);
+
+    // console.log("The Mike that hit your car is: " + listOfMikes[randomIndex]);
+
+    document.getElementById("mikeResult").innerHTML = "The Mike that hit your car is: " + listOfMikes[randomIndex];  
+
+    // console.log(listOfMikes[randomIndex]);
+
+    listOfNames.push("Micky");
+
+    // console.log(listOfNames);
+
+    console.log(listOfNames[0]);
+
+    // console.log(listOfNames.length);
+
+    for (let i = 0; i < listOfNames.length; i++) {
+    console.log(listOfNames[i]);
+
+    if (listOfNames[i] === "Mikey") {
+        console.log("Found Mikey at index: " + i);
+    }       
+}
+
+}
+
