@@ -1,0 +1,33 @@
+body{
+    background-color: aquamarine;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: darkblue;
+    margin-top: 0;
+}
+
+table {
+    width: 15%;
+    /* Add a border to the table */
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th{
+    background-color: lightblue;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+/* Style for table cells */
+td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
